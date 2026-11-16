@@ -1,0 +1,17 @@
+[
+  {
+    "EventID": 4624,
+    "Computer": "SRV-APP-01",
+    "TimeCreated": "2026-11-15T10:00:00Z",
+    "LogonType": 2,
+    "TargetUserName": "bob",
+    "IpAddress": "-"
+  },
+  {
+    "EventID": 7045,
+    "Computer": "SRV-APP-01",
+    "TimeCreated": "2026-11-15T10:05:00Z",
+    "ServiceName": "Backup Agent",
+    "ImagePath": "C:\\Program Files\\Backup\\agent.exe"
+  }
+]
