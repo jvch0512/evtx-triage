@@ -2,6 +2,8 @@
 
 evtx-triage reads Windows event logs exported to JSON (JSON Lines or arrays, produced by `evtx_dump`, PowerShell `ConvertTo-Json`, Hayabusa or Chainsaw) and raises the events an analyst looks at first: cleared audit logs, RDP logons from public addresses, bursts of failed logons and a success after them, services installed with suspicious paths, additions to privileged groups, new accounts, audit policy changes, scheduled tasks, suspicious PowerShell script blocks, living-off-the-land command lines and LSASS memory access.
 
+![Terminal demo of evtx-triage on its sample data](docs/demo.svg)
+
 **Live demo:** https://jvch0512.github.io/evtx-triage/ (Synthetic data.)
 
 D (LDC), Phobos standard library only. The demo page is rendered from the tool's `--tsv` output by `scripts/site.py` (Python 3, only needed to regenerate the page).
@@ -53,3 +55,13 @@ make test    # A D test program: every rule on crafted events, nested and flat s
 ```
 
 MIT.
+
+## Code scanning (SARIF)
+
+`scripts/tsv2sarif.py` converts the `--tsv` output into SARIF 2.1.0, so findings show up in GitHub code scanning:
+
+```sh
+bin/evtx-triage examples --tsv | python3 scripts/tsv2sarif.py --tool evtx-triage --prefix examples > results.sarif
+```
+
+Upload `results.sarif` with `github/codeql-action/upload-sarif`. Severities map to SARIF levels (critical and high to error, medium to warning, low and info to note) and to a `security-severity` score.

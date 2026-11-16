@@ -2,3 +2,4 @@ build/
 bin/evtx-triage
 bin/*.o
 *.o
+results.sarif
